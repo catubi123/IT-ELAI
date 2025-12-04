@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Mark Dave Catubig</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome </h2>
+            <p>To My Website </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>This is a Final Requirements for the subject IT-ELAI</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>SIT-IN MONITORING SYSTEM</h3>
+                    <p>The system is to monitor the current used and unused PC in the laboratory CCS Department</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of your second project</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:markdave@example.com">markdavecatubig@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📱 Phone</h3>
+                        <p><a href="tel:+639123456789">09773812852</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>Cebu, Philippines</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🔗 Social Links</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com" target="_blank">Facebook</a>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://github.com" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <h3>Chat with Me</h3>
+            <button class="close-btn" id="close-chatbot">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages"></div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Type a message...">
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+
+    <script src="script.js"></script>
+    <!-- Add before closing </body> tag -->
+<script src="https://your-flowise-domain.com/embed.js"></script>
+<script>
+  window.flowise = {
+    chatflowId: "YOUR_CHATFLOW_ID",
+    apiHost: "https://your-flowise-domain.com"
+  };
+</script>
+</body>
+</html>
