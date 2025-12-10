@@ -5,7 +5,7 @@
 const GEMINI_CONFIG = {
     // ⚠️ IMPORTANT: Replace with your own API key
     // Get it for FREE at: https://aistudio.google.com/app/apikey
-    API_KEY: 'YOUR_GEMINI_API_KEY_HERE',
+    API_KEY: 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY',
     
     // API endpoint (using Google's Gemini API)
     API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
