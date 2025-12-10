@@ -35,6 +35,16 @@ The chatbot can help with:
 - **Random** - "random number" or "flip coin"
 - **Help** - "help" or "commands"
 
+### 🤖 AI-Powered with Gemini (Optional)
+
+Add Google's Gemini AI for intelligent, AI-powered responses! See `GEMINI_SETUP_GUIDE.md` for setup instructions.
+
+**Features:**
+- FREE API key from Google
+- Natural conversations
+- Answers complex questions
+- Hybrid system: Fast built-in functions + AI for complex queries
+
 Type "help" in the chatbot to see all available commands!
 
 ## 🚀 Quick Start
@@ -99,6 +109,7 @@ Simply add new `<section>` elements in `index.html` and style them in `styles.cs
 
 - **DEPLOYMENT_GUIDE.md** - How to deploy your site for free
 - **CHATBOT_FUNCTIONS_GUIDE.md** - How to add chatbot functions
+- **GEMINI_SETUP_GUIDE.md** - How to add Gemini AI to your chatbot (FREE!)
 - **README.md** - This file
 
 ## 🎓 Learning Resources

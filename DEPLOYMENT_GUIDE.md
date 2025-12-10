@@ -52,7 +52,7 @@
 - Great for React/Next.js (if you upgrade later)
 
 **Steps:**
-1. Go to [vercel.com](https://vercel.com) and sign up
+1. Go to [vercel.com]() and sign up
 2. Click "New Project"
 3. Import from GitHub or upload files
 4. Deploy!

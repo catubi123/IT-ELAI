@@ -115,15 +115,27 @@ function getBotResponse(message) {
     // Help function
     if (lowerMessage.includes('help') || lowerMessage.includes('commands') || 
         lowerMessage.includes('what can you do')) {
-        return `I can help you with:\n\n` +
+        const config = window.GEMINI_CONFIG || {};
+        const hasGemini = config.ENABLED && config.API_KEY && config.API_KEY !== 'YOUR_GEMINI_API_KEY_HERE';
+        
+        let helpText = `I can help you with:\n\n` +
                `📊 Calculator - Try "calculate 5 + 3" or "what's 10 * 5"\n` +
                `⏰ Time - Ask "what time is it" or "current time"\n` +
                `📝 About - Ask "tell me about" or "who are you"\n` +
                `💼 Projects - Ask "show projects" or "what projects"\n` +
                `📧 Contact - Ask "contact info" or "how to reach"\n` +
                `🌤️ Weather - Ask "weather" (mock data)\n` +
-               `🎲 Random - Try "random number" or "flip coin"\n\n` +
-               `Type any of these to get started!`;
+               `🎲 Random - Try "random number" or "flip coin"`;
+        
+        if (hasGemini) {
+            helpText += `\n\n🤖 AI Mode: I can also answer complex questions using Gemini AI!\n` +
+                       `Try asking: "What is machine learning?" or "Explain quantum computing"`;
+        } else {
+            helpText += `\n\n💡 Tip: Add Gemini AI for intelligent responses! See GEMINI_SETUP_GUIDE.md`;
+        }
+        
+        helpText += `\n\nType any of these to get started!`;
+        return helpText;
     }
     
     // Calculator function
@@ -270,6 +282,74 @@ function getBotResponse(message) {
     return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
 }
 
+// Check if message matches built-in functions
+function hasBuiltInFunction(message) {
+    const lowerMessage = message.toLowerCase().trim();
+    const builtInKeywords = [
+        'hello', 'hi', 'hey', 'greetings',
+        'help', 'commands',
+        'calculate', 'what is', 'what\'s', 'solve',
+        'time', 'current time',
+        'about', 'who are you',
+        'project', 'portfolio', 'work',
+        'contact', 'email', 'phone',
+        'weather', 'temperature',
+        'random number', 'random',
+        'flip', 'coin',
+        'skill', 'technologies',
+        'bye', 'goodbye'
+    ];
+    return builtInKeywords.some(keyword => lowerMessage.includes(keyword));
+}
+
+// Call Gemini API for AI-powered responses
+async function getGeminiResponse(message) {
+    const config = window.GEMINI_CONFIG || {};
+    
+    // Check if Gemini is enabled and API key is set
+    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+        return null; // Return null if Gemini is not configured
+    }
+
+    try {
+        const response = await fetch(
+            `${config.API_URL}?key=${config.API_KEY}`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: `You are a helpful assistant for Mark Dave Catubig's portfolio website. 
+                            You help visitors learn about Mark's projects, skills, and contact information.
+                            Be friendly, concise, and helpful. 
+                            If asked about Mark, mention he's an IT student passionate about web development.
+                            User message: ${message}`
+                        }]
+                    }]
+                })
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+            return data.candidates[0].content.parts[0].text;
+        }
+        
+        return null;
+    } catch (error) {
+        console.error('Gemini API error:', error);
+        return null;
+    }
+}
+
 async function sendMessage() {
     const message = chatbotInput.value.trim();
     if (!message) return;
@@ -282,13 +362,43 @@ async function sendMessage() {
     const typingIndicator = addMessage('Typing...', 'bot');
     typingIndicator.classList.add('typing');
 
-    // Simulate typing delay for better UX
-    setTimeout(() => {
-        // Get bot response using our function
-        const botResponse = getBotResponse(message);
+    // Check if we should use built-in functions or Gemini
+    const config = window.GEMINI_CONFIG || {};
+    const useBuiltInFirst = config.USE_AS_FALLBACK !== false;
+    
+    let botResponse = null;
+
+    if (useBuiltInFirst && hasBuiltInFunction(message)) {
+        // Use built-in function (fast response)
+        setTimeout(() => {
+            botResponse = getBotResponse(message);
+            typingIndicator.remove();
+            addMessage(botResponse, 'bot');
+        }, 500);
+    } else if (config.ENABLED && config.API_KEY && config.API_KEY !== 'YOUR_GEMINI_API_KEY_HERE') {
+        // Use Gemini API for AI-powered response
+        try {
+            botResponse = await getGeminiResponse(message);
+            
+            // If Gemini fails or returns null, fall back to built-in
+            if (!botResponse) {
+                botResponse = getBotResponse(message);
+            }
+        } catch (error) {
+            console.error('Error getting Gemini response:', error);
+            botResponse = getBotResponse(message); // Fallback to built-in
+        }
+        
         typingIndicator.remove();
         addMessage(botResponse, 'bot');
-    }, 500); // 500ms delay to simulate thinking
+    } else {
+        // No Gemini configured, use built-in functions
+        setTimeout(() => {
+            botResponse = getBotResponse(message);
+            typingIndicator.remove();
+            addMessage(botResponse, 'bot');
+        }, 500);
+    }
 }
 
 function addMessage(text, sender) {
