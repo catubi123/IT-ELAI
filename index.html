@@ -18,37 +18,91 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
         <div class="container">
-            <h2>Welcome </h2>
-            <p>To My Website </p>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Mark Dave Catubig</span>
+                </h1>
+                <p class="hero-subtitle">Web Developer & IT Student</p>
+                <p class="hero-description">Passionate about creating innovative solutions and bringing ideas to life through code</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse"></div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p>This is a Final Requirements for the subject IT-ELAI</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">This is a Final Requirements for the subject IT-ELAI</p>
+                    <p>I'm a dedicated IT student passionate about web development and creating meaningful digital experiences. Through this portfolio, I showcase my projects and skills in building modern web applications.</p>
+                    <div class="skills">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Here are some of my recent works and projects</p>
             <div class="project-grid">
                 <div class="project-card">
+                    <div class="project-icon">💻</div>
                     <h3>SIT-IN MONITORING SYSTEM</h3>
                     <p>The system is to monitor the current used and unused PC in the laboratory CCS Department</p>
+                    <div class="project-tags">
+                        <span class="tag">Web App</span>
+                        <span class="tag">Monitoring</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
                 <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project</p>
+                    <div class="project-icon">🚀</div>
+                    <h3>Portfolio Website</h3>
+                    <p>A modern, responsive portfolio website showcasing my projects and skills with an integrated chatbot feature</p>
+                    <div class="project-tags">
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
             </div>
         </div>
