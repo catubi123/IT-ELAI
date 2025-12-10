@@ -309,7 +309,7 @@ async function getGeminiResponse(message) {
     const config = window.GEMINI_CONFIG || {};
     
     // Check if Gemini is enabled and API key is set
-    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY') {
         return null; // Return null if Gemini is not configured
     }
 
