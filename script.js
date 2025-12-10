@@ -125,11 +125,13 @@ function getBotResponse(message) {
                `💼 Projects - Ask "show projects" or "what projects"\n` +
                `📧 Contact - Ask "contact info" or "how to reach"\n` +
                `🌤️ Weather - Ask "weather" (mock data)\n` +
-               `🎲 Random - Try "random number" or "flip coin"`;
+               `🎲 Random - Try "random number" or "flip coin"\n` +
+               `🌍 Language - Say "change language" or "speak Spanish"`;
         
         if (hasGemini) {
             helpText += `\n\n🤖 AI Mode: I can also answer complex questions using Gemini AI!\n` +
-                       `Try asking: "What is machine learning?" or "Explain quantum computing"`;
+                       `Try asking: "What is machine learning?" or "Explain quantum computing"\n` +
+                       `💬 I can respond in multiple languages! Say "change language" to see options.`;
         } else {
             helpText += `\n\n💡 Tip: Add Gemini AI for intelligent responses! See GEMINI_SETUP_GUIDE.md`;
         }
