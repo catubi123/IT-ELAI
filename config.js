@@ -20,3 +20,10 @@ const GEMINI_CONFIG = {
 // Make it available globally
 window.GEMINI_CONFIG = GEMINI_CONFIG;
 
+// Debug: Log config status (remove in production if needed)
+console.log('✅ Gemini Config loaded:', {
+    enabled: GEMINI_CONFIG.ENABLED,
+    hasApiKey: !!GEMINI_CONFIG.API_KEY && GEMINI_CONFIG.API_KEY !== 'YOUR_GEMINI_API_KEY_HERE',
+    apiKeyLength: GEMINI_CONFIG.API_KEY ? GEMINI_CONFIG.API_KEY.length : 0
+});
+
