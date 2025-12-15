@@ -1,19 +1,19 @@
 {
-  "name": "portfolio-chatbot",
+  "name": "mark-portfolio-chatbot",
   "version": "1.0.0",
-  "description": "Portfolio website with chatbot",
+  "description": "Portfolio website with AI chatbot powered by RAG",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "node server.js"
   },
+  "keywords": ["portfolio", "chatbot", "rag", "gemini"],
+  "author": "Mark Dave Catubig",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "axios": "^1.4.0",
-    "dotenv": "^16.0.3"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
   }
 }

@@ -308,27 +308,38 @@ function hasBuiltInFunction(message) {
 async function getGeminiResponse(message) {
     const config = window.GEMINI_CONFIG || {};
     
-    // Check if Gemini is enabled and API key is set
-    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY') {
-        return null; // Return null if Gemini is not configured
+    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'YOUR_API_KEY') {
+        return null;
     }
 
     try {
+        // Fetch RAG context from server
+        const contextResponse = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message })
+        });
+        
+        const contextData = await contextResponse.json();
+        const ragContext = contextData.context || '';
+        
+        // Build enhanced prompt with RAG context
+        const enhancedPrompt = `You are Mark's portfolio chatbot assistant.
+${ragContext}
+
+User: ${message}
+
+Provide a helpful, friendly response based on the context above.`;
+
         const response = await fetch(
             `${config.API_URL}?key=${config.API_KEY}`,
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     contents: [{
                         parts: [{
-                            text: `You are a helpful assistant for Mark Dave Catubig's portfolio website. 
-                            You help visitors learn about Mark's projects, skills, and contact information.
-                            Be friendly, concise, and helpful. 
-                            If asked about Mark, mention he's an IT student passionate about web development.
-                            User message: ${message}`
+                            text: enhancedPrompt
                         }]
                     }]
                 })
@@ -340,12 +351,7 @@ async function getGeminiResponse(message) {
         }
 
         const data = await response.json();
-        
-        if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-            return data.candidates[0].content.parts[0].text;
-        }
-        
-        return null;
+        return data.candidates?.[0]?.content?.parts?.[0]?.text || null;
     } catch (error) {
         console.error('Gemini API error:', error);
         return null;
