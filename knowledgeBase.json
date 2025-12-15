@@ -1,44 +1,44 @@
 {
   "qa_pairs": [
     {
-      "question": "What is your name?",
-      "answer": "I'm a helpful chatbot assistant designed to answer your questions."
+      "question": "What is this website about?",
+      "answer": "This website provides comprehensive information and services tailored to meet your needs."
     },
     {
-      "question": "How can I help you?",
-      "answer": "You can ask me questions about various topics and I'll do my best to assist you with accurate information."
+      "question": "How do I navigate the website?",
+      "answer": "Use the main menu at the top to access different sections. Each page has clear navigation links to help you find what you need."
     },
     {
-      "question": "What services do you offer?",
-      "answer": "I provide information, answer questions, and help with general inquiries across multiple domains."
+      "question": "How do I create an account?",
+      "answer": "Click the 'Sign Up' button in the top right corner and fill in your details to create a new account."
     },
     {
-      "question": "How do I contact support?",
-      "answer": "You can reach our support team through the contact page or email us at support@example.com."
+      "question": "How do I log in?",
+      "answer": "Click 'Login' in the top right corner, then enter your email and password."
     },
     {
-      "question": "What are your business hours?",
-      "answer": "We operate 24/7 to serve you better."
+      "question": "How do I reset my password?",
+      "answer": "Click 'Forgot Password' on the login page and follow the instructions sent to your email."
     },
     {
-      "question": "Can you help with technical issues?",
-      "answer": "Yes, I can assist with common technical questions and troubleshooting steps."
+      "question": "What features does your website offer?",
+      "answer": "Our website offers user accounts, search functionality, content management, and customer support services."
     },
     {
-      "question": "How do I get started?",
-      "answer": "Simply ask me any questions you have and I'll provide helpful responses."
+      "question": "Is the website mobile friendly?",
+      "answer": "Yes, our website is fully responsive and works seamlessly on all devices including phones and tablets."
     },
     {
-      "question": "Is my data secure?",
-      "answer": "We take data security seriously and follow industry best practices to protect your information."
+      "question": "How do I contact customer support?",
+      "answer": "Visit our Contact Us page or use the live chat feature available in the bottom right corner."
     },
     {
-      "question": "What if I need more help?",
-      "answer": "Feel free to ask follow-up questions or request clarification on any topic."
+      "question": "What are the website's privacy policies?",
+      "answer": "Our privacy policy is available in the footer. We protect your data and follow industry-standard security practices."
     },
     {
-      "question": "Do you have a FAQ section?",
-      "answer": "Yes, common questions are documented to help you find quick answers."
+      "question": "How often is the website updated?",
+      "answer": "We regularly update our content and features to provide the best user experience. Check back often for new additions."
     }
   ]
 }
