@@ -1,0 +1,46 @@
+</head>
+  <body>
+    <!-- Flowise Chatbot Widget with Session Support -->
+    <script type="module">
+      import Flowise from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+      
+      // Generate or retrieve session ID
+      const sessionId = localStorage.getItem('chatSessionId') || 'session_' + Date.now();
+      localStorage.setItem('chatSessionId', sessionId);
+      
+      Flowise.init({
+        chatflowid: "YOUR_CHATFLOW_ID",
+        apiHost: "https://your-flowise-deployment-url.com",
+        sessionId: sessionId,
+        theme: {
+          chatWindow: {
+            welcomeMessage: "👋 Welcome! Ask me any questions about our services!",
+            backgroundColor: "#ffffff",
+            height: 600,
+            width: 400,
+            fontSize: 15,
+            showMaximizeButton: true,
+            botMessage: {
+              backgroundColor: "#e3f2fd",
+              textColor: "#1a237e",
+              showAvatar: true,
+              avatarSrc: "https://raw.githubusercontent.com/FlowiseAI/Flowise/main/images/flowise.png",
+            },
+            userMessage: {
+              backgroundColor: "#1976d2",
+              textColor: "#fff",
+              showAvatar: true,
+            },
+            textInput: {
+              placeholder: "Type your question...",
+              backgroundColor: "#f5f5f5",
+              textColor: "#000",
+              sendButtonColor: "#1976d2",
+              maxChars: 500,
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
