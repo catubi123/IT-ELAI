@@ -5,6 +5,7 @@ require('dotenv').config();
 
 // Import RAG service
 const { loadKnowledgeBase, getRAGContext } = require('./rag-service');
+const chatbotHandler = require('./chatbotHandler');
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,8 @@ app.use(express.static('.'));
 
 // Load knowledge base on startup
 loadKnowledgeBase();
+
+app.use(chatbotHandler);
 
 app.post('/api/chat', async (req, res) => {
     try {
