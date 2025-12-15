@@ -18,7 +18,7 @@ window.GEMINI_CONFIG = GEMINI_CONFIG;
 
 console.log('✅ Gemini Config loaded:', {
     enabled: GEMINI_CONFIG.ENABLED,
-    hasApiKey: !!GEMINI_CONFIG.API_KEY && GEMINI_CONFIG.API_KEY !== 'YOUR_GEMINI_API_KEY_HERE',
+    hasApiKey: !!GEMINI_CONFIG.API_KEY && GEMINI_CONFIG.API_KEY !== 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY',
     apiKeyLength: GEMINI_CONFIG.API_KEY ? GEMINI_CONFIG.API_KEY.length : 0
 });
 
