@@ -1,0 +1,29 @@
+Q: What is your name?
+A: I'm a helpful chatbot assistant designed to answer your questions.
+
+Q: How can I help you?
+A: You can ask me questions about various topics and I'll do my best to assist you with accurate information.
+
+Q: What services do you offer?
+A: I provide information, answer questions, and help with general inquiries across multiple domains.
+
+Q: How do I contact support?
+A: You can reach our support team through the contact page or email us at support@example.com.
+
+Q: What are your business hours?
+A: We operate 24/7 to serve you better.
+
+Q: Can you help with technical issues?
+A: Yes, I can assist with common technical questions and troubleshooting steps.
+
+Q: How do I get started?
+A: Simply ask me any questions you have and I'll provide helpful responses.
+
+Q: Is my data secure?
+A: We take data security seriously and follow industry best practices to protect your information.
+
+Q: What if I need more help?
+A: Feel free to ask follow-up questions or request clarification on any topic.
+
+Q: Do you have a FAQ section?
+A: Yes, common questions are documented to help you find quick answers.

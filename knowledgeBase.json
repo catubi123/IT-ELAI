@@ -1,64 +1,44 @@
 {
   "qa_pairs": [
     {
-      "question": "What is your website about?",
-      "answer": "Our website provides innovative solutions for businesses and individuals looking to streamline their operations."
+      "question": "What is your name?",
+      "answer": "I'm a helpful chatbot assistant designed to answer your questions."
+    },
+    {
+      "question": "How can I help you?",
+      "answer": "You can ask me questions about various topics and I'll do my best to assist you with accurate information."
+    },
+    {
+      "question": "What services do you offer?",
+      "answer": "I provide information, answer questions, and help with general inquiries across multiple domains."
     },
     {
       "question": "How do I contact support?",
-      "answer": "You can reach our support team at support@example.com or call us at +1-800-123-4567. We're available Monday to Friday, 9 AM to 6 PM."
+      "answer": "You can reach our support team through the contact page or email us at support@example.com."
     },
     {
-      "question": "What are your pricing plans?",
-      "answer": "We offer three plans: Basic ($9/month), Pro ($29/month), and Enterprise (custom pricing). Each plan includes different features."
+      "question": "What are your business hours?",
+      "answer": "We operate 24/7 to serve you better."
     },
     {
-      "question": "How do I sign up?",
-      "answer": "Visit our website and click the 'Sign Up' button. Fill in your email, create a password, and verify your account. You'll have instant access to our platform."
+      "question": "Can you help with technical issues?",
+      "answer": "Yes, I can assist with common technical questions and troubleshooting steps."
     },
     {
-      "question": "Do you offer a free trial?",
-      "answer": "Yes! We offer a 14-day free trial with full access to all Pro features. No credit card required."
-    },
-    {
-      "question": "What payment methods do you accept?",
-      "answer": "We accept credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for enterprise customers."
-    },
-    {
-      "question": "Can I cancel my subscription anytime?",
-      "answer": "Absolutely! You can cancel your subscription anytime from your account settings. No cancellation fees."
+      "question": "How do I get started?",
+      "answer": "Simply ask me any questions you have and I'll provide helpful responses."
     },
     {
       "question": "Is my data secure?",
-      "answer": "Yes, we use industry-standard encryption (SSL/TLS) and comply with GDPR and data protection regulations."
+      "answer": "We take data security seriously and follow industry best practices to protect your information."
     },
     {
-      "question": "Do you provide API access?",
-      "answer": "Yes, our Pro and Enterprise plans include API access. Documentation is available in your dashboard."
+      "question": "What if I need more help?",
+      "answer": "Feel free to ask follow-up questions or request clarification on any topic."
     },
     {
-      "question": "What is your uptime guarantee?",
-      "answer": "We guarantee 99.9% uptime. Our infrastructure is distributed across multiple servers for reliability."
-    },
-    {
-      "question": "How do I reset my password?",
-      "answer": "Click 'Forgot Password' on the login page, enter your email, and follow the reset link sent to your inbox."
-    },
-    {
-      "question": "Do you offer customer onboarding?",
-      "answer": "Yes! Enterprise customers get dedicated onboarding support. Pro and Basic users have access to video tutorials and documentation."
-    },
-    {
-      "question": "What integrations do you support?",
-      "answer": "We integrate with Slack, Google Workspace, Microsoft Teams, Zapier, and 100+ other applications."
-    },
-    {
-      "question": "Is there a mobile app?",
-      "answer": "Yes, we have iOS and Android apps available on the App Store and Google Play. They offer full feature access."
-    },
-    {
-      "question": "How often do you update your platform?",
-      "answer": "We release new features and improvements every month. Updates are deployed automatically with no downtime."
+      "question": "Do you have a FAQ section?",
+      "answer": "Yes, common questions are documented to help you find quick answers."
     }
   ]
 }

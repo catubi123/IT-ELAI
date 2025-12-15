@@ -1,28 +1,38 @@
 const knowledgeBase = require('./knowledgeBase.json');
 
+function calculateSimilarity(str1, str2) {
+  const s1 = str1.toLowerCase().trim();
+  const s2 = str2.toLowerCase().trim();
+  
+  const words1 = s1.split(/\s+/);
+  const words2 = s2.split(/\s+/);
+  const matches = words1.filter(w => words2.includes(w)).length;
+  
+  return matches / Math.max(words1.length, words2.length);
+}
+
 function searchKnowledgeBase(userQuery) {
   const query = userQuery.toLowerCase().trim();
   
-  // Search with multiple matching strategies
-  const exactMatches = knowledgeBase.qa_pairs.filter(pair =>
-    pair.question.toLowerCase().includes(query)
-  );
+  if (!query || query.length === 0) return null;
   
-  const partialMatches = knowledgeBase.qa_pairs.filter(pair =>
-    pair.answer.toLowerCase().includes(query) ||
-    query.split(' ').some(word => 
-      word.length > 3 && pair.question.toLowerCase().includes(word)
+  // Score all Q&A pairs
+  const scored = knowledgeBase.qa_pairs.map(pair => ({
+    ...pair,
+    score: Math.max(
+      calculateSimilarity(query, pair.question),
+      calculateSimilarity(query, pair.answer) * 0.7
     )
-  );
+  }));
   
-  const results = [...exactMatches, ...partialMatches];
-  const bestMatch = results[0];
+  // Sort by score and return best match
+  scored.sort((a, b) => b.score - a.score);
+  const bestMatch = scored[0];
   
-  // Return full answer without truncation
-  return bestMatch ? {
+  return bestMatch && bestMatch.score > 0.2 ? {
     answer: bestMatch.answer,
     question: bestMatch.question,
-    confidence: exactMatches.length > 0 ? 'high' : 'medium'
+    confidence: bestMatch.score > 0.6 ? 'high' : bestMatch.score > 0.4 ? 'medium' : 'low'
   } : null;
 }
 
