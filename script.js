@@ -383,7 +383,7 @@ async function sendMessage() {
             typingIndicator.remove();
             addMessage(botResponse, 'bot');
         }, 500);
-    } else if (config.ENABLED && config.API_KEY && config.API_KEY !== 'YOUR_GEMINI_API_KEY_HERE') {
+    } else if (config.ENABLED && config.API_KEY && config.API_KEY !== 'AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk') {
         // Use Gemini API for AI-powered response
         try {
             botResponse = await getGeminiResponse(message);

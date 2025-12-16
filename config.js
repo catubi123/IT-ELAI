@@ -2,23 +2,11 @@
 // Get your FREE API key from: https://aistudio.google.com/app/apikey
 
 const GEMINI_CONFIG = {
-    // Use API key from environment or fallback
-    API_KEY: typeof process !== 'undefined' && process.env 
-        ? process.env.GEMINI_API_KEY 
-        : 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY',
-    
-    API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
-    
-    ENABLED: true,
-    
-    USE_AS_FALLBACK: true
+    API_KEY: process.env.AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk|| '',
+    MODEL: 'gemini-pro',
+    BASE_URL: 'https://generativelanguage.googleapis.com/v1beta/models',
+    MAX_TOKENS: 2048,
+    TEMPERATURE: 0.7
 };
 
-window.GEMINI_CONFIG = GEMINI_CONFIG;
-
-console.log('✅ Gemini Config loaded:', {
-    enabled: GEMINI_CONFIG.ENABLED,
-    hasApiKey: !!GEMINI_CONFIG.API_KEY && GEMINI_CONFIG.API_KEY !== 'AIzaSyDkQTnafjtEW__DBIZbSy-ZkjpPlYK7KrY',
-    apiKeyLength: GEMINI_CONFIG.API_KEY ? GEMINI_CONFIG.API_KEY.length : 0
-});
-
+module.exports = GEMINI_CONFIG;
