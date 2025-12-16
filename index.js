@@ -3,12 +3,20 @@ const express = require('express');
 const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { searchKnowledgeBase } = require('./knowledgeBaseRetrieval');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI(process.env.AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk);
+// Serve static files from public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk');
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Knowledge Base API is running' });
@@ -47,4 +55,5 @@ User Question: ${query}`;
   }
 });
 
-app.listen(3000, () => console.log('API running on port 3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

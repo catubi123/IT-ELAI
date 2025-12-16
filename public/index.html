@@ -1,46 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-  <body>
-    <!-- Flowise Chatbot Widget with Session Support -->
-    <script type="module">
-      import Flowise from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-      
-      // Generate or retrieve session ID
-      const sessionId = localStorage.getItem('chatSessionId') || 'session_' + Date.now();
-      localStorage.setItem('chatSessionId', sessionId);
-      
-      Flowise.init({
-        chatflowid: "YOUR_CHATFLOW_ID",
-        apiHost: "https://your-flowise-deployment-url.com",
-        sessionId: sessionId,
-        theme: {
-          chatWindow: {
-            welcomeMessage: "👋 Welcome! Ask me any questions about our services!",
-            backgroundColor: "#ffffff",
-            height: 600,
-            width: 400,
-            fontSize: 15,
-            showMaximizeButton: true,
-            botMessage: {
-              backgroundColor: "#e3f2fd",
-              textColor: "#1a237e",
-              showAvatar: true,
-              avatarSrc: "https://raw.githubusercontent.com/FlowiseAI/Flowise/main/images/flowise.png",
-            },
-            userMessage: {
-              backgroundColor: "#1976d2",
-              textColor: "#fff",
-              showAvatar: true,
-            },
-            textInput: {
-              placeholder: "Type your question...",
-              backgroundColor: "#f5f5f5",
-              textColor: "#000",
-              sendButtonColor: "#1976d2",
-              maxChars: 500,
-            }
-          }
-        }
-      })
-    </script>
-  </body>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Mark Dave Catubig</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-frame">
+                        <img src="logo.png" alt="Mark Dave Catubig" class="hero-image" id="profile-image">
+                    </div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Mark Dave Catubig</span>
+                </h1>
+                <p class="hero-subtitle">Web Developer & IT Student</p>
+                <p class="hero-description">Passionate about creating innovative solutions and bringing ideas to life through code</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">This is a Final Requirements for the subject IT-ELAI</p>
+                    <p>I'm a dedicated IT student passionate about web development and creating meaningful digital experiences. Through this portfolio, I showcase my projects and skills in building modern web applications.</p>
+                    <div class="skills">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Here are some of my recent works and projects</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">💻</div>
+                    <h3>SIT-IN MONITORING SYSTEM</h3>
+                    <p>The system is to monitor the current used and unused PC in the laboratory CCS Department</p>
+                    <div class="project-tags">
+                        <span class="tag">Web App</span>
+                        <span class="tag">Monitoring</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🚀</div>
+                    <h3>Portfolio Website</h3>
+                    <p>A modern, responsive portfolio website showcasing my projects and skills with an integrated chatbot feature</p>
+                    <div class="project-tags">
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and discuss opportunities. I'd love to hear from you!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:markdavecatubig@gmail.com">markdavecatubig@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+639773812852">+63 977 381 2852</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Cebu, Philippines</p>
+                        </div>
+                    </div>
+                    <div class="contact-item social-section">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-details">
+                            <h3>Connect With Me</h3>
+                            <div class="social-links">
+                                <a href="https://facebook.com" target="_blank" class="social-link facebook">
+                                    <span class="social-icon">📘</span>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" class="social-link linkedin">
+                                    <span class="social-icon">💼</span>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="social-link github">
+                                    <span class="social-icon">💻</span>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-header">
+                        <h3>Send a Message</h3>
+                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="Tell me about your project or just say hello!" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <span class="send-icon">✉️</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <h3>Chat with Me</h3>
+            <button class="close-btn" id="close-chatbot">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages"></div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Type a message...">
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+
+    <!-- Configuration file (add your Gemini API key here) -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
