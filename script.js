@@ -308,7 +308,7 @@ function hasBuiltInFunction(message) {
 async function getGeminiResponse(message) {
     const config = window.GEMINI_CONFIG || {};
     
-    if (!config.ENABLED || !config.API_KEY || config.API_KEY === 'YOUR_API_KEY') {
+    if (!config.ENABLED || !config.API_KEY) {
         return null;
     }
 
@@ -383,7 +383,7 @@ async function sendMessage() {
             typingIndicator.remove();
             addMessage(botResponse, 'bot');
         }, 500);
-    } else if (config.ENABLED && config.API_KEY && config.API_KEY !== 'AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk') {
+    } else if (config.ENABLED && config.API_KEY) {
         // Use Gemini API for AI-powered response
         try {
             botResponse = await getGeminiResponse(message);
