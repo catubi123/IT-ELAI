@@ -162,49 +162,31 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-header">
-                        <h3>Send a Message</h3>
-                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" placeholder="Tell me about your project or just say hello!" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                        <span class="send-icon">✉️</span>
-                    </button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Chatbot Widget -->
-    <div id="chatbot-widget" class="chatbot-widget">
-        <div class="chatbot-header">
-            <h3>Chat with Me</h3>
-            <button class="close-btn" id="close-chatbot">✕</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mark Dave Catubig. All Rights Reserved.</p>
         </div>
-        <div class="chatbot-messages" id="chatbot-messages"></div>
-        <div class="chatbot-input-area">
-            <input type="text" id="chatbot-input" placeholder="Type a message...">
-            <button id="chatbot-send">Send</button>
-        </div>
+    </footer>
+
+    <div class="chatbot-widget" id="flowise-widget">
+        <!-- Flowise will auto-render here -->
     </div>
 
-    <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+    <!-- Flowise Chat Embed Script -->
+    <script src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "d2934a76-56f4-4a25-bcec-79c7c854f1d3",
+            apiHost: "https://cloud.flowiseai.com",
+        })
+    </script>
 
-    <!-- Configuration file (add your Gemini API key here) -->
-    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

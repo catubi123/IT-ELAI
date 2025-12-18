@@ -1,0 +1,24 @@
+=== FREQUENTLY ASKED QUESTIONS ===
+
+GETTING STARTED
+1. What is this website about?
+2. How do I get started?
+3. How do I navigate the website?
+4. What features does your website offer?
+
+ACCOUNT & AUTHENTICATION
+5. How do I create an account?
+6. How do I log in?
+7. How do I reset my password?
+8. How do I update my profile information?
+9. Can I delete my account?
+
+FEATURES & FUNCTIONALITY
+10. Does your website have a search feature?
+11. Is the website mobile friendly?
+12. How often is the website updated?
+13. Is there a user community or forum?
+
+DATA & PRIVACY
+14. What are the website's privacy policies?
+15. Can I export my

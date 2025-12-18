@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk');
+const OpenAI = new GoogleGenerativeAI(process.env.OpenAI_API_KEY || 'AIzaSyDIs511cUOFbeJytJIxTR73jDeh0J0fcVk');
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Knowledge Base API is running' });

@@ -8,6 +8,7 @@ const { loadKnowledgeBase, getRAGContext } = require('./rag-service');
 const chatbotHandler = require('./chatbotHandler');
 const { searchKnowledgeBase } = require('./knowledgeBaseRetrieval');
 const { addToHistory, getConversationContext, initializeConversation } = require('./conversationMemory');
+const { sendMessageToFlowise } = require('./chatbot');
 
 const app = express();
 app.use(express.json());
@@ -58,6 +59,20 @@ app.get('/api/history/:sessionId', (req, res) => {
   const { sessionId } = req.params;
   const history = getConversationContext(sessionId);
   res.json({ history });
+});
+
+// Chat endpoint
+app.post('/chat', async (req, res) => {
+    try {
+        const { message } = req.body;
+        if (!message) {
+            return res.status(400).json({ error: 'Message required' });
+        }
+        const response = await sendMessageToFlowise(message);
+        res.json({ response });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // Health check
